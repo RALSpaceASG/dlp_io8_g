@@ -1,0 +1,21 @@
+<launch>
+	<!-- USB - Serial Device Location -->
+	<arg name="device_location" value="/dev/serial/by-id/usb-DLP_Design_DLP-IO8_12345678-if00-port0"/>
+
+	<!-- USB-Serial Baud Rate -->
+	<arg name="baud_rate" value="115200"/>
+
+	<!-- ROS Sampling Frequency -->
+	<arg name="sample_rate" value="5"/>
+
+	<node name="dlp_io8_g_node" pkg="dlp_io8_g" 		
+			type="dlp_io8_g_node.py" output="screen">
+
+	<param name="path" value="$(arg device_location)"/>
+	<param name="baud" value="$(arg baud_rate)"/>
+	<param name="sample_rate" value="$(arg sample_rate)"/>
+
+	</node>
+
+
+</launch>
