@@ -4,8 +4,7 @@ from __future__ import division
 import rospy
 import serial
 import sys
-from dlp_io8_msg.msg import monitorMessage
-
+import std_msgs.msg 
 
 class DLP:
     def __init__(self,device,baud):
@@ -83,14 +82,14 @@ class DLP:
 
 def main():
 
-    voltage_data = monitorMessage()
+    voltage_data = std_msgs.msg.Float32MultiArray
     rospy.init_node('rimmer_battery_monitor', anonymous=True)
 
     device_loc = rospy.get_param('~path')
     baud = rospy.get_param('~baud')
     sample_rate = rospy.get_param('~sample_rate')
     
-    pub = rospy.Publisher('rimmer_voltage_level', monitorMessage, queue_size=10)
+    pub = rospy.Publisher('rimmer_voltage_level', voltage_data, queue_size=10)
     rate = rospy.Rate(sample_rate)    
 
 
