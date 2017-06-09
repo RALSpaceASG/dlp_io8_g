@@ -4,7 +4,8 @@ from __future__ import division
 import rospy
 import serial
 import sys
-import std_msgs.msg 
+import std_msgs
+from dlp_io8_g.msg import dlp_io8_msg
 
 class DLP:
     def __init__(self,device,baud):
