@@ -94,13 +94,13 @@ def main():
     rospy.init_node('dlp_io8_g', anonymous=True)
 
     ## Load device kocation data, see top for further detail
-    device_loc = rospy.get_param('~path')
+    device_loc = rospy.get_param('~dev_path')
 
-    ## Load Device Baud Rate with default 115200 baud
-    baud = rospy.get_param('~baud','115200')
+    ## Load Device Baud Rate 
+    baud = rospy.get_param('~baud')
 
-    ## Load desired sampling rate with default 5 Hz
-    sample_rate = rospy.get_param('~sample_rate','5')
+    ## Load desired sampling rate 
+    sample_rate = rospy.get_param('~sample_rate')
     
     ## Initialise Publisher with default queue size 1
     pub = rospy.Publisher('voltage_levels', dlp_io8_msg, queue_size=1)

@@ -1,0 +1,5 @@
+#DLP_io8_G
+  dlp_io8_g_node:
+    dev_path : /dev/serial/by-id/usb-DLP_Design_DLP-IO8_12345678-if00-port0
+    baud : 115200
+    sample_rate : 1
